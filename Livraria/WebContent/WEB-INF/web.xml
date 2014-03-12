@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Livraria</display-name>
+
+	<listener>
+		<listener-class>livraria.servlet.LivrariaContextListener</listener-class>
+	</listener>
+	
+	 <welcome-file-list>		
+		 <welcome-file>livros/livraria.jsp</welcome-file>		
+	</welcome-file-list>
+
+	<jsp-config>
+		<jsp-property-group>
+			<display-name>livraria</display-name>
+			<url-pattern>/livros/*</url-pattern>
+			<el-ignored>false</el-ignored>
+			<scripting-invalid>false</scripting-invalid>
+			<is-xml>false</is-xml>
+			<include-prelude>/modelos/cabecalho.jspf</include-prelude>
+			<include-coda>/modelos/rodape.jspf</include-coda>
+		</jsp-property-group>
+	</jsp-config>
+	
+	<servlet>
+		<display-name>Controlador</display-name>
+		<servlet-name>Controlador</servlet-name>
+		<servlet-class>livraria.servlet.ServletControladorLivraria</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Controlador</servlet-name>
+		<url-pattern>/livros/livraria</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Controlador</servlet-name>
+		<url-pattern>/livros/catalogo</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Controlador</servlet-name>
+		<url-pattern>/livros/detalhesLivro</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Controlador</servlet-name>
+		<url-pattern>/livros/mostrarCarrinho</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Controlador</servlet-name>
+		<url-pattern>/livros/comprar</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Controlador</servlet-name>
+		<url-pattern>/livros/recibo</url-pattern>
+	</servlet-mapping>
+
+</web-app>
